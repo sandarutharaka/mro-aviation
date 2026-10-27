@@ -1,0 +1,52 @@
+.hero-rail,
+.story-bottom {
+  font-size: 10px;
+}
+
+.story-top > .eyebrow,
+.story-panel .kicker,
+.service-links a > span,
+.ident-sub,
+.expertise-index,
+.facility-caption,
+.stat-label,
+.design-note,
+.departure-copy .eyebrow,
+.departure-caption,
+.contact-top > .eyebrow,
+.contact-top > span,
+.footer-bottom {
+  font-size: 10px;
+}
+
+.expertise-card > p {
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .hero-rail,
+  .story-bottom {
+    font-size: 8px;
+  }
+
+  .story-top > .eyebrow,
+  .story-panel .kicker,
+  .ident-sub,
+  .section-heading .eyebrow,
+  .expertise-index,
+  .facility-heading .eyebrow,
+  .facility-caption,
+  .stat-label,
+  .design-note,
+  .departure-copy .eyebrow,
+  .departure-caption,
+  .contact-top > .eyebrow,
+  .footer-bottom {
+    font-size: 8px;
+  }
+
+  .expertise-card > p,
+  .facility-stats p {
+    font-size: 11px;
+  }
+}

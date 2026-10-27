@@ -5,13 +5,12 @@ const $=selector=>document.querySelector(selector),hero=$('.hero-scroll'),story=
 const sequence=createSequence($('#hangar-canvas'));
 const preference=matchMedia('(prefers-reduced-motion: reduce)');
 let reduced=preference.matches;
-try{const saved=localStorage.getItem('uuds-reduced-motion');if(saved!==null)reduced=saved==='true';}catch{}
 let heroValue=0,storyValue=0,departureValue=0,lastTime=0;
 const panels=[...document.querySelectorAll('[data-scene]')],phases=[...document.querySelectorAll('.hero-phase')];
 let aircraft;
 const state={story:0,departure:0,storyActive:false,departureActive:false,reduced};
-function setMotion(value){reduced=value;state.reduced=value;document.documentElement.classList.toggle('reduce-motion',value);$('#motion-toggle').setAttribute('aria-pressed',String(value));$('#motion-toggle').textContent=`MOTION ${value?'OFF':'ON'} ◉`;try{localStorage.setItem('uuds-reduced-motion',String(value));}catch{}}
-$('#motion-toggle').addEventListener('click',()=>setMotion(!reduced));preference.addEventListener('change',e=>setMotion(e.matches));setMotion(reduced);
+function setMotion(value){reduced=value;state.reduced=value;document.documentElement.classList.toggle('reduce-motion',value);}
+preference.addEventListener('change',e=>setMotion(e.matches));setMotion(reduced);
 const menu=$('.menu-toggle'),nav=$('#navigation');
 function closeMenu(){menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu');nav.classList.remove('open');}
 menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close menu':'Open menu');nav.classList.toggle('open',open);});
